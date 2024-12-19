@@ -1,0 +1,187 @@
+
+
+.footer {
+  /* background-color: var(--forest-green); */
+  background-color: black;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: var(--font-family);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background animation for a premium feel */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(9, 75, 44, 0.292), transparent 90%);
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logoSection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo {
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: var(--accent-color);
+}
+
+.logoSection p {
+  font-size: 1rem;
+  color: var(--light-gray);
+}
+
+.linksSection {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.linksSection a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+  overflow: hidden;
+}
+
+.linksSection a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover-accent);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.4s ease-in-out;
+}
+
+.linksSection a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.linksSection a:hover {
+  color: var(--hover-accent);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Add some glowing animation to social icons */
+.socialSection {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.icon {
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: var(--hover-accent);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.icon:hover::before {
+  opacity: 0.6;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.icon:hover {
+  transform: translateY(-5px);
+  color: var(--hover-accent);
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+
+.icon:active {
+  transform: translateY(0);
+}
+
+/* Pulsating effect for a high-end feel */
+.icon:hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.2);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  animation: pulse 0.6s forwards;
+}
+
+@keyframes pulse {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(2);
+  }
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 10px;
+  }
+
+  .logoSection p {
+    font-size: 0.9rem;
+  }
+
+  .linksSection {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .socialSection {
+    justify-content: center;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+  }
+}

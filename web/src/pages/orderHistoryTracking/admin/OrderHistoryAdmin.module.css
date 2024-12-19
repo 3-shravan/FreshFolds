@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+/* OrderHistory.module.css */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 193, 195, 0.1),
+    rgba(253, 187, 45, 0.1)
+  );
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.searchContainer {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.searchIcon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 50px;
+  height: 48px;
+  border: 2px solid #ddd;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #17a86c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(23, 168, 108, 0.5);
+}
+
+.orderList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  display: inline-block;
+  width: 100%;
+}
+.uid {
+  font-weight: 600;
+  color: #787878;
+}
+.fullname {
+  font-weight: 600;
+  color: rgb(0, 118, 53);
+}
+.key {
+  font-weight: 600;
+  color: #383838;
+}
+
+.orderCard {
+  flex: 1 1 300px; /* Responsive card width */
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 1vh;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.orderCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.orderDetails {
+  margin-bottom: 10px; /* Space between details and button */
+}
+
+.detailButton {
+  background-color: #03250a;
+  color: white;
+  font-weight: 600;
+  font-size: o.7rem;
+  height: 9vh;
+  width: 18%;
+  justify-content: center;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.detailButton:hover {
+  background-color: #028548;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .searchContainer {
+    flex-direction: column;
+  }
+
+  .searchInput {
+    margin-bottom: 10px;
+  }
+}

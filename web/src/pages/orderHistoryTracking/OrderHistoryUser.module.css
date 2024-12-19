@@ -1,0 +1,256 @@
+/* OrderHistoryUser.module.css */
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 193, 195, 0.1),
+    rgba(253, 187, 45, 0.1)
+  );
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+  font-family: "Poppins", sans-serif;
+}
+
+.title {
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px;
+  
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  width: 42%;
+  padding: auto;
+}
+.search{
+  font-weight: 600;
+  margin: 10px;
+}
+
+.searchInput {
+  width: 90%;
+  padding: 10px;
+  border-radius: 50px;
+  height: 48px;
+  border: 2px solid #ddd;
+  font-weight: 600;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #17a86c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(23, 168, 108, 0.5);
+}
+
+.statusSelect {
+  padding: 12px;
+  border: 2px solid #020000;
+  background-color: rgb(4, 45, 24);
+  color: rgb(221, 221, 221);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.statusSelect:active {
+  background-color: #e0e0e0; 
+  border-radius: 50px;
+  color: rgb(4, 45, 24); 
+  transform: scale(0.95); 
+  transition: all 0.9s ease; 
+}
+.statusSelect:hover {
+  background-color: #ffffff; 
+  color: rgb(4, 45, 24); 
+  transform: scale(1); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.statusSelect:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+/* Order List */
+.orderList {
+  list-style: none;
+  padding: 0;
+}
+
+.orderItem {
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.orderItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.orderDetails {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+}
+
+/* Buttons at the bottom */
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+  
+ 
+}
+
+.trackButton {
+  background-color: #03250a;
+  color: white;
+  
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15vw;
+  font-family: " 'Fira Code'","Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100px;
+  line-height: 20px;
+}
+
+.trackButton:hover {
+  background-color: white;
+  color: #012d0a;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.edit {
+  width: 10vw;
+  font-family: " 'Fira Code'","Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100px;
+  line-height: 20px;
+  background-color: #03250a;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.edit:hover {
+  background-color: white;
+  color: #012d0a;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.exportButton {
+  width: 10vw;
+  font-family: " 'Fira Code'","Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 100px;
+  line-height: 20px;
+  background-color: #dfdfdf;
+  color: rgb(1, 94, 63);
+  padding: 12px 15px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+.exportButton:hover {
+  background-color: white;
+  color: #012d0a;
+  transform: scale(1.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  background-color: rgb(4, 45, 24);
+  color: white;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  z-index: 1;
+  right: 0;
+}
+
+.dropdownContent span {
+  color: #ffffff;
+  padding: 10px 15px;
+  text-align: left;
+  border-radius: 10px;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdownContent span:hover {
+  background-color: #e4e4e4;
+  color:#03250a;
+  font-weight: 600;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,123 @@
+.contactContainer {
+  background-color: #00241d;
+  color: var(--white);
+  padding: 60px;
+  margin-top: 0px;
+  text-align: center;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  font-family: var(--font-family);
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: var(--hover-accent);
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin-bottom: 50px;
+  color: var(--light-gray);
+  font-family: var(--font-family);
+}
+
+.contactForm {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  color: var(--white);
+  text-align: left;
+  margin-bottom: 5px;
+  opacity: 0.9;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--darker-green);
+  color: var(--white);
+  font-family: var(--font-family);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input:focus,
+.textarea:focus {
+  background-color: var(--forest-green);
+  outline: none;
+  box-shadow: 5 3 7px var(--color1);
+}
+
+.textarea {
+  height: 180px;
+  resize: none;
+}
+
+.submitButton {
+  background-color: #001a15;
+  color: rgb(235, 235, 235);
+  font-weight: 700;
+  border: none;
+  padding: 14px 30px;
+  width: 200px;
+  border-radius: 50px;
+  font-size: 15px;
+  height: 10vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  transition: all 0.6s ease;
+  
+}
+
+.submitButton:hover::before {
+  left: 100%;
+}
+
+.submitButton:hover {
+  background-color: rgb(237, 237, 237);
+  transform: translateY(-4px);
+  color: #00241d;
+}
+
+.submitButton:active {
+  transform: translateY(2px);
+}

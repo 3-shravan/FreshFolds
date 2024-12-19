@@ -1,0 +1,173 @@
+
+/* Custom Color Palette */
+.forest-green {
+  background-color: #0b3d0b; /* Dark Forest Green */
+}
+
+.dark-gray {
+  background-color: #2f2f2f; /* Dark Gray */
+  color: #b0b0b0; /* Light Gray Text */
+}
+
+.black {
+  background-color: #121212; /* Deep Black */
+  color: #ffffff; /* White Text */
+}
+
+.light-gray {
+  background-color: #4e4e4e; /* Mid Gray */
+  color: #eaeaea; /* Light Gray */
+}
+
+/* Centered Order Page */
+.order-page {
+  width: 100%;
+  margin :0 auto;
+  padding: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #012219; /* Dark Forest Green */
+  border-radius: 7px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+ /* Centered on the page */
+  text-align: center;
+  transition: 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  min-height: 30rem;
+  
+}
+
+.order-page:hover {
+  transform: scale(1.01); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Order Form Header */
+.order-form h2 {
+  color: #eaeaea; /* Light Gray */
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  
+}
+
+
+.form-group label {
+  display: block;
+  color: #940303; /* Light Gray Text */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.form-group label {
+  display: block;
+  color: #fbfbfb; /* Light Gray Text */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: none;
+  background-color: #d8d8d8; /* Dark Gray */
+  color: #ffdcdc; /* Light Gray Text */
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  background-color: #074434; /* Mid Gray */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Order Button */
+.order-button  {
+  width: 100%;
+  padding: 14px;
+  background-color: #0b3d0b; /* Dark Forest Green */
+  color: #ffffff; /* White */
+  border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.order-btn:hover {
+  background-color: #2f2f2f; /* Dark Gray */
+  transform: translateY(-3px); /* Lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Order Details */
+.order-details {
+  text-align: center;
+  margin-top: 20px;
+  color: #b0b0b0; /* Light Gray Text */
+  font-size: 1.1rem;
+  animation: slideIn 0.7s ease-in-out;
+}
+
+.tracking-id {
+  color: #f39c12; /* Highlight Yellow */
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+/* Centering the Page and Form on Mobile */
+@media (max-width: 600px) {
+  .order-page {
+    padding: 20px;
+    margin: 30px auto;
+  }
+
+  .order-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .form-group input {
+    padding: 12px;
+  }
+
+  .order-btn {
+    padding: 12px;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

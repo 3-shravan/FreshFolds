@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track your delivery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+</head>
+<body>
+    <center><h2>Track your orders</h2></center>
+    <div id="map" style="height: 700px"></div>
+
+    <script>
+        var socket = io();
+        var map = null;
+        var marker = null;
+
+        
+        if (navigator.geolocation) {
+            navigator.geolocation.watchPosition(function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+             
+                socket.emit('location_update', {
+                    latitude: latitude,
+                    longitude: longitude
+                });
+
+                
+                if (!map) {
+                    map = L.map('map').setView([latitude, longitude], 13);  // Center the map on the user's location
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap contributors'
+                    }).addTo(map);
+                }
+
+                // Place or update the marker at the user's location
+                if (marker) {
+                    map.removeLayer(marker);
+                }
+                marker = L.marker([latitude, longitude]).addTo(map)
+                    .bindPopup("You order is here").openPopup();
+
+                // Pan the map to the user's new location
+                map.setView([latitude, longitude], 13);
+            }, function(error) {
+                alert("Unable to retrieve your location.");
+            });
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+
+        // Listen for new location updates from the server
+        socket.on('new_location', function(data) {
+            var latitude = data.latitude;
+            var longitude = data.longitude;
+
+            // Place or update the marker on the new location
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            marker = L.marker([latitude, longitude]).addTo(map)
+                .bindPopup("Your order is here").openPopup();
+
+            // Pan to the new location
+            map.setView([latitude, longitude], 13);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+/* TrackingPage.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(34, 193, 195, 0.1), rgba(253, 187, 45, 0.1));
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2d2d2d;
+  margin-bottom: 20px;
+  position: relative;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.orderId {
+  color: #28a745; /* Highlight the order ID */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.trackingInfo {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 20px 0;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.trackingInfo:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .trackingInfo {
+    font-size: 1rem;
+  }
+}

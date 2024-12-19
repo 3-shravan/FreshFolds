@@ -1,0 +1,206 @@
+/*-------------HERO SECTION--------------*/
+
+
+.landingPage {
+  height: calc(100vh - 60px);
+}
+.landingPage,
+.landingPage .heroContent {
+  margin: 0;
+  padding: 0;
+}
+
+.landingPage .heroContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 72vh;
+  padding: 2rem 1rem;
+  background-image: url("../src/assets/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.specialcharacter {
+  color: rgb(2, 72, 19);
+}
+.landingPage .heroContent .line-Discount {
+  font-family: "Popins";
+  font-weight: 900;
+  padding-top: 30px;
+  font-size: 22px;
+  color: #c3ffe3;
+  display: inline;
+  z-index: 2;
+}
+.landingPage .heroContent .lineOffer {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+  color: #f6ffdb;
+  display: inline;
+  width: 150px;
+  background-color: rgb(1, 37, 18);
+  z-index: 2;
+  filter: brightness(100%);
+  letter-spacing: 4px;
+  line-height: 25px;
+  border: none;
+  color: #eeffd7;
+  cursor: pointer;
+}
+
+.landingPage .heroContent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.landingPage .heroContent h1,
+.landingPage .heroContent p {
+  position: relative;
+  z-index: 2;
+}
+
+.landingPage .heroContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.landingPage .heroContent p {
+  font-size: 1.2rem;
+  color: #f6ffdb;
+  text-align: center;
+  font-weight: bold;
+}
+
+/*-------------------SERVICES-------------------*/
+#services {
+  background-color: var(--forest-green);
+  color: var(--white);
+  padding: 35px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#services h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: var(--white);
+  text-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  font-weight: 700;
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.serviceCard {
+  /* background-color: var(--dark-gray); */
+  background-color: #232d024e;
+  color: var(--white);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease,
+    background-color 0.4s ease;
+  width: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.serviceCard:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+  background-color: var(--medium-gray);
+}
+
+.serviceCard:hover::before {
+  opacity: 0.4;
+}
+
+.serviceCard h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  font-weight: bolder;
+}
+
+.serviceCard p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/*-----------------ABOUT--------------------*/
+#about {
+  background-color: var(--forest-green); /* Dark green background */
+  color: #ffd700;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#about h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffd700; /* Golden color */
+  margin-bottom: 30px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content p {
+  font-size: 1rem;
+  color: #f5f5f5;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+@media (min-width: 768px) {
+  #about {
+    padding: 80px 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #about h2 {
+    font-size: 3rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,93 @@
+.container {
+  background-color: #00241d;
+  padding: 60px 20px;
+  color: var(--white);
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heading {
+  font-size: 2.7rem;
+  margin-bottom: 50px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--white);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.serviceCard {
+  background-color: #151616;
+  padding: 30px;
+  width: 270px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease-in-out;
+  transform: translateY(0);
+  text-align: center;
+}
+
+.serviceCard:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  background-color: #00241d;
+}
+
+.serviceTitle {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.servicePrice {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+  color: var(--white);
+}
+
+.serviceDescription {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: var(--white);
+  line-height: 1.6;
+}
+
+.orderButton {
+  background-color: var(--accent-color);
+  color: var(--darkest-green);
+  padding: 12px 25px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.orderButton:hover {
+  background-color: var(--white);
+  color: var(--darkest-green);
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.serviceCard {
+  animation: fadeInUp 0.6s ease-in-out;
+}
